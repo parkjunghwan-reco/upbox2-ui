@@ -19,7 +19,8 @@ context7 mcp를 활용하여 버전과 문법을 잘 참고해줘.
 ### 계획된 MCP 도구 활용
 1. **Context7 MCP**: 최신 Vue 3, TypeScript, TailwindCSS 문법 및 베스트 프랙티스 참조
 2. **Figma MCP**: 디자인 토큰 및 변수 시스템 구성
-3. **GitHub 저장소 참조**: 레퍼런스 프로젝트 구조 분석 (MCP 아님)
+3. **Sequential-thinking MCP**: 복잡한 문제 해결과 단계별 사고 과정 지원
+4. **GitHub 저장소 참조**: 레퍼런스 프로젝트 구조 분석 (MCP 아님)
 
 ## 📊 MCP 활용 결과
 
@@ -44,7 +45,7 @@ export const Button = defineComponent<ButtonProps>({
 })
 ```
 
-#### 2. GitHub 저장소 참조 활용
+#### 3. GitHub 저장소 참조 활용
 - 레퍼런스 프로젝트 구조 분석 (https://github.com/line/abc-def)
 - 모노레포 패턴 적용
 - 패키지 의존성 관리 방식 학습
@@ -249,6 +250,7 @@ const buttonClass = computed(() =>
 ### 학습 포인트
 1. **MCP 도구의 한계와 활용법**
    - Context7: 문법 및 베스트 프랙티스 참조에 효과적
+   - Sequential-thinking: 복잡한 문제 해결과 단계별 사고에 유용
    - Figma: 아직 제한적, 수동 대안 필요
    - GitHub: 별도 MCP 없이도 저장소 참조 가능
 
@@ -283,6 +285,7 @@ const buttonClass = computed(() =>
 
 ### MCP 도구
 - [Context7 MCP](https://github.com/context7/mcp-server)
+- [Sequential-thinking MCP](https://github.com/modelcontextprotocol/server-sequential-thinking)
 - [Figma MCP](https://github.com/figma/mcp-server)
 - GitHub 저장소 참조 (MCP 아님)
 
@@ -303,7 +306,7 @@ const buttonClass = computed(() =>
 ## 🎤 Q&A
 
 **Q: MCP 도구 중 가장 유용했던 것은?**
-A: Context7 MCP가 가장 유용했습니다. 최신 문법과 베스트 프랙티스를 실시간으로 참조할 수 있어 개발 속도가 크게 향상되었습니다.
+A: Context7 MCP가 가장 유용했고, Sequential-thinking MCP가 복잡한 문제 해결에 도움이 되었습니다. 최신 문법과 베스트 프랙티스를 참조하면서 체계적인 사고 과정을 거쳐 개발 속도와 품질이 크게 향상되었습니다.
 
 **Q: reka-ui를 실제로 사용하지 못한 이유는?**
 A: Vue 3 생태계에서의 성숙도 부족과 문서화 부족이 주요 원인이었습니다. 대신 헤드리스 UI 패턴은 유지하면서 직접 구현하는 방향으로 선회했습니다.
