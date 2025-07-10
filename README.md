@@ -239,8 +239,9 @@ npm install
 # 모든 패키지 빌드
 npm run build
 
-# 개발 모드
-npm run dev
+# 개발 서버 실행 (각각 별도 터미널에서)
+cd packages/storybook && npm run storybook  # Storybook: http://localhost:6006
+cd packages/example && npm run dev          # Example: http://localhost:5173
 
 # 타입 검사
 npm run type-check
