@@ -28,7 +28,7 @@ import type { Size, Radius } from '@upbox2-ui/core'
 
 // Input variants using cva
 const inputVariants = cva(
-  'flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
+  'flex h-10 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
   {
     variants: {
       size: {
@@ -42,9 +42,9 @@ const inputVariants = cva(
         large: 'rounded-lg',
       },
       state: {
-        default: 'border-input',
-        error: 'border-destructive focus-visible:ring-destructive',
-        success: 'border-success focus-visible:ring-success',
+        default: 'border-gray-300',
+        error: 'border-red-500 focus-visible:ring-red-500',
+        success: 'border-green-500 focus-visible:ring-green-500',
       },
     },
     defaultVariants: {
@@ -128,7 +128,7 @@ defineOptions({
 }
 
 .error-message {
-  color: hsl(var(--destructive));
+  color: #ef4444; /* red-500 */
   font-size: 0.875rem;
   font-weight: 500;
 }

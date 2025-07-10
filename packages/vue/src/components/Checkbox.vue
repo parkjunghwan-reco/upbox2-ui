@@ -99,12 +99,12 @@ const toggle = () => {
 }
 
 const checkboxVariants = cva(
-  'peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
+  'peer shrink-0 rounded-sm border border-gray-300 ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
   {
     variants: {
       checked: {
-        true: 'bg-primary text-primary-foreground',
-        false: 'bg-background',
+        true: 'bg-blue-600 text-white border-blue-600',
+        false: 'bg-white',
       },
       size: {
         small: 'h-3 w-3',

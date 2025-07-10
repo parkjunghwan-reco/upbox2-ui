@@ -4,9 +4,7 @@
   "version": "0.1.0",
   "description": "Upbox2 UI Design System - Vue 3 components built on reka-ui",
   "type": "module",
-  "workspaces": [
-    "packages/*"
-  ],
+
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
@@ -25,6 +23,6 @@
     "turbo": "^1.12.0",
     "typescript": "^5.3.0"
   },
-  "packageManager": "npm@10.2.0",
+  "packageManager": "pnpm@8.15.0",
   "license": "MIT"
 }

@@ -76,7 +76,7 @@ const selectOption = (option: RadioOption) => {
 }
 
 const radioVariants = cva(
-  'aspect-square rounded-full border border-primary text-primary ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 flex items-center justify-center',
+  'aspect-square rounded-full border border-gray-300 text-blue-600 ring-offset-white focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 flex items-center justify-center',
   {
     variants: {
       size: {
@@ -85,8 +85,8 @@ const radioVariants = cva(
         large: 'h-5 w-5',
       },
       checked: {
-        true: 'bg-primary border-primary',
-        false: 'bg-background',
+        true: 'bg-blue-600 border-blue-600',
+        false: 'bg-white',
       },
     },
     defaultVariants: {
@@ -97,7 +97,7 @@ const radioVariants = cva(
 )
 
 const indicatorVariants = cva(
-  'block rounded-full bg-primary-foreground',
+  'block rounded-full bg-white',
   {
     variants: {
       size: {
@@ -113,7 +113,7 @@ const indicatorVariants = cva(
 )
 
 const labelVariants = cva(
-  'cursor-pointer select-none',
+  'cursor-pointer select-none text-gray-900',
   {
     variants: {
       size: {
@@ -122,8 +122,8 @@ const labelVariants = cva(
         large: 'text-lg',
       },
       disabled: {
-        true: 'cursor-not-allowed opacity-50',
-        false: 'cursor-pointer',
+        true: 'cursor-not-allowed opacity-50 text-gray-400',
+        false: 'cursor-pointer text-gray-900',
       },
     },
     defaultVariants: {

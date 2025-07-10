@@ -22,7 +22,7 @@
       </span>
       <span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
         <svg
-          class="w-5 h-5 text-muted-foreground"
+          class="w-5 h-5 text-gray-500"
           :class="{ 'transform rotate-180': selectState.isOpen }"
           fill="none"
           stroke="currentColor"
@@ -48,7 +48,7 @@
     >
       <div
         v-if="selectState.isOpen"
-        class="absolute z-10 mt-1 w-full bg-background border border-border rounded-md shadow-lg max-h-60 overflow-auto"
+        class="absolute z-10 mt-1 w-full bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-auto"
         role="listbox"
         :aria-labelledby="selectState.id"
       >
@@ -64,7 +64,7 @@
           <span class="block truncate">{{ option.label }}</span>
           <span
             v-if="modelValue === option.value"
-            class="absolute inset-y-0 right-0 flex items-center pr-4 text-primary"
+            class="absolute inset-y-0 right-0 flex items-center pr-4 text-blue-600"
           >
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
               <path
@@ -170,7 +170,7 @@ onUnmounted(() => {
 })
 
 const selectVariants = cva(
-  'relative w-full cursor-pointer rounded-md border border-input bg-background pl-3 pr-10 py-2 text-left shadow-sm focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:border-ring disabled:cursor-not-allowed disabled:opacity-50',
+  'relative w-full cursor-pointer rounded-md border border-gray-300 bg-white pl-3 pr-10 py-2 text-left text-gray-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:border-blue-500 disabled:cursor-not-allowed disabled:opacity-50',
   {
     variants: {
       size: {
@@ -187,10 +187,10 @@ const selectVariants = cva(
 
 const optionClasses = (option: SelectOption, index: number) => {
   return cn(
-    'relative cursor-pointer select-none py-2 pl-3 pr-9 hover:bg-accent hover:text-accent-foreground',
+    'relative cursor-pointer select-none py-2 pl-3 pr-9 text-gray-900 hover:bg-gray-100 hover:text-gray-900',
     {
-      'bg-accent text-accent-foreground': index === highlightedIndex.value,
-      'text-muted-foreground cursor-not-allowed': option.disabled,
+      'bg-gray-100 text-gray-900': index === highlightedIndex.value,
+      'text-gray-400 cursor-not-allowed': option.disabled,
     }
   )
 }
