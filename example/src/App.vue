@@ -101,6 +101,195 @@
             </Modal>
           </div>
         </div>
+
+        <!-- Card Examples -->
+        <div class="bg-card p-6 rounded-lg border">
+          <h2 class="text-2xl font-semibold mb-4">Cards</h2>
+          <div class="space-y-4">
+            <Card variant="default" padding="medium">
+              <h3 class="font-semibold mb-2">Default Card</h3>
+              <p class="text-sm text-muted-foreground">
+                This is a default card with medium padding.
+              </p>
+            </Card>
+            
+            <Card variant="outline" padding="small">
+              <h3 class="font-semibold mb-2">Outline Card</h3>
+              <p class="text-sm text-muted-foreground">
+                This is an outline card with small padding.
+              </p>
+            </Card>
+            
+            <Card variant="default" padding="large">
+              <h3 class="font-semibold mb-2">Large Padding</h3>
+              <p class="text-sm text-muted-foreground">
+                This card has large padding for more spacious content.
+              </p>
+            </Card>
+          </div>
+        </div>
+
+        <!-- Badge Examples -->
+        <div class="bg-card p-6 rounded-lg border">
+          <h2 class="text-2xl font-semibold mb-4">Badges</h2>
+          <div class="space-y-4">
+            <div class="flex flex-wrap gap-2">
+              <Badge variant="default" size="small">Default</Badge>
+              <Badge variant="primary" size="small">Primary</Badge>
+              <Badge variant="secondary" size="small">Secondary</Badge>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <Badge variant="success" size="medium">Success</Badge>
+              <Badge variant="warning" size="medium">Warning</Badge>
+              <Badge variant="error" size="medium">Error</Badge>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <Badge variant="primary" size="large">Large Badge</Badge>
+            </div>
+          </div>
+        </div>
+
+        <!-- Switch Examples -->
+        <div class="bg-card p-6 rounded-lg border">
+          <h2 class="text-2xl font-semibold mb-4">Switches</h2>
+          <div class="space-y-4">
+            <div class="flex items-center space-x-2">
+              <Switch v-model="switchState1" size="small" />
+              <label class="text-sm">Small Switch</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <Switch v-model="switchState2" size="medium" />
+              <label class="text-sm">Medium Switch</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <Switch v-model="switchState3" size="large" />
+              <label class="text-sm">Large Switch</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <Switch v-model="switchStateDisabled" :disabled="true" />
+              <label class="text-sm text-muted-foreground">Disabled Switch</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Checkbox Examples -->
+        <div class="bg-card p-6 rounded-lg border">
+          <h2 class="text-2xl font-semibold mb-4">Checkboxes</h2>
+          <div class="space-y-4">
+            <div class="flex items-center space-x-2">
+              <Checkbox v-model="checkboxState1" size="small" />
+              <label class="text-sm">Small Checkbox</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <Checkbox v-model="checkboxState2" size="medium" />
+              <label class="text-sm">Medium Checkbox</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <Checkbox v-model="checkboxState3" size="large" />
+              <label class="text-sm">Large Checkbox</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <Checkbox v-model="checkboxStateDisabled" :disabled="true" />
+              <label class="text-sm text-muted-foreground">Disabled Checkbox</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <Checkbox v-model="checkboxStateIndeterminate" :indeterminate="true" />
+              <label class="text-sm">Indeterminate Checkbox</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Components -->
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Textarea Examples -->
+        <div class="bg-card p-6 rounded-lg border">
+          <h2 class="text-2xl font-semibold mb-4">Textarea</h2>
+          <div class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium mb-1">Small Textarea</label>
+              <Textarea
+                v-model="textareaValue1"
+                placeholder="Enter your message..."
+                size="small"
+                :rows="2"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1">Medium Textarea</label>
+              <Textarea
+                v-model="textareaValue2"
+                placeholder="Enter your message..."
+                size="medium"
+                :rows="3"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1">Large Textarea</label>
+              <Textarea
+                v-model="textareaValue3"
+                placeholder="Enter your message..."
+                size="large"
+                :rows="4"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Alert Examples -->
+        <div class="bg-card p-6 rounded-lg border">
+          <h2 class="text-2xl font-semibold mb-4">Alerts</h2>
+          <div class="space-y-4">
+            <Alert variant="info" title="Info Alert" description="This is an informational alert." />
+            <Alert variant="success" title="Success Alert" description="This is a success alert." />
+            <Alert variant="warning" title="Warning Alert" description="This is a warning alert." />
+            <Alert variant="error" title="Error Alert" description="This is an error alert." :closable="true" />
+            <Alert variant="default" :closable="true">
+              <strong>Custom Alert</strong> - This is a custom alert with slot content.
+            </Alert>
+          </div>
+        </div>
+
+        <!-- More Components Placeholder -->
+        <div class="bg-card p-6 rounded-lg border">
+          <h2 class="text-2xl font-semibold mb-4">Select & Radio</h2>
+          <div class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium mb-2">Select Option</label>
+              <Select
+                v-model="selectedValue"
+                :options="selectOptions"
+                placeholder="Choose an option..."
+                size="medium"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-2">Radio Options</label>
+              <Radio
+                v-model="radioValue"
+                :options="radioOptions"
+                size="medium"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- More Components Info -->
+        <div class="bg-card p-6 rounded-lg border">
+          <h2 class="text-2xl font-semibold mb-4">More Components</h2>
+          <div class="space-y-4">
+            <p class="text-sm text-muted-foreground">
+              This design system includes many more components like Select, Radio, Accordion, 
+              Tabs, and more. Each component is built with accessibility in mind and follows 
+              modern design patterns.
+            </p>
+            <div class="flex space-x-2">
+              <Badge variant="primary" size="small">Vue 3</Badge>
+              <Badge variant="secondary" size="small">TypeScript</Badge>
+              <Badge variant="success" size="small">Tailwind CSS</Badge>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Component States Display -->
@@ -142,7 +331,22 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { Button, Input, Modal, useToggle, useDisclosure } from '@upbox2-ui/vue'
+import { 
+  Button, 
+  Input, 
+  Modal, 
+  Card, 
+  Badge, 
+  Switch, 
+  Checkbox, 
+  Textarea, 
+  Alert, 
+  Select, 
+  Radio,
+  useToggle, 
+  useDisclosure 
+} from '@upbox2-ui/vue'
+import type { SelectOption, RadioOption } from '@upbox2-ui/vue'
 
 // Form state
 const textInput = ref('')
@@ -150,8 +354,44 @@ const emailInput = ref('')
 const passwordInput = ref('')
 const errorInput = ref('')
 
+// Textarea states
+const textareaValue1 = ref('')
+const textareaValue2 = ref('')
+const textareaValue3 = ref('')
+
 // Modal state
 const isModalOpen = ref(false)
+
+// Switch states
+const switchState1 = ref(false)
+const switchState2 = ref(true)
+const switchState3 = ref(false)
+const switchStateDisabled = ref(false)
+
+// Checkbox states
+const checkboxState1 = ref(false)
+const checkboxState2 = ref(true)
+const checkboxState3 = ref(false)
+const checkboxStateDisabled = ref(false)
+const checkboxStateIndeterminate = ref(false)
+
+// Select states
+const selectedValue = ref('')
+const selectOptions: SelectOption[] = [
+  { value: 'option1', label: 'Option 1' },
+  { value: 'option2', label: 'Option 2' },
+  { value: 'option3', label: 'Option 3' },
+  { value: 'option4', label: 'Option 4 (Disabled)', disabled: true },
+]
+
+// Radio states
+const radioValue = ref('')
+const radioOptions: RadioOption[] = [
+  { value: 'radio1', label: 'Radio Option 1' },
+  { value: 'radio2', label: 'Radio Option 2' },
+  { value: 'radio3', label: 'Radio Option 3' },
+  { value: 'radio4', label: 'Radio Option 4 (Disabled)', disabled: true },
+]
 
 // Composables
 const toggleState = useToggle({ initialValue: false })
@@ -163,5 +403,16 @@ const formValues = computed(() => ({
   emailInput: emailInput.value,
   passwordInput: passwordInput.value,
   errorInput: errorInput.value,
+  textareaValue1: textareaValue1.value,
+  textareaValue2: textareaValue2.value,
+  textareaValue3: textareaValue3.value,
+  switchState1: switchState1.value,
+  switchState2: switchState2.value,
+  switchState3: switchState3.value,
+  checkboxState1: checkboxState1.value,
+  checkboxState2: checkboxState2.value,
+  checkboxState3: checkboxState3.value,
+  selectedValue: selectedValue.value,
+  radioValue: radioValue.value,
 }))
 </script>

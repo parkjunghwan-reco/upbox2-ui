@@ -49,15 +49,80 @@ npm install @upbox2-ui/vue @upbox2-ui/tailwind
       <h2>Modal Title</h2>
       <p>Modal content goes here</p>
     </Modal>
+    
+    <Card variant="default" padding="medium">
+      <h3>Card Title</h3>
+      <p>Card content</p>
+    </Card>
+    
+    <Badge variant="primary" size="medium">New</Badge>
+    
+    <Switch v-model="switchValue" size="medium" />
+    
+    <Checkbox v-model="checkboxValue" size="medium" />
+    
+    <Textarea 
+      v-model="textareaValue" 
+      placeholder="Enter your message..."
+      :rows="3"
+    />
+    
+    <Alert 
+      variant="success" 
+      title="Success!" 
+      description="Your action was completed successfully."
+    />
+    
+    <Select 
+      v-model="selectedValue" 
+      :options="selectOptions" 
+      placeholder="Choose an option..."
+    />
+    
+    <Radio 
+      v-model="radioValue" 
+      :options="radioOptions" 
+      name="radio-group"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Button, Input, Modal } from '@upbox2-ui/vue'
+import { 
+  Button, 
+  Input, 
+  Modal, 
+  Card, 
+  Badge, 
+  Switch, 
+  Checkbox, 
+  Textarea, 
+  Alert,
+  Select,
+  Radio
+} from '@upbox2-ui/vue'
+import type { SelectOption, RadioOption } from '@upbox2-ui/vue'
 
 const inputValue = ref('')
 const isModalOpen = ref(false)
+const switchValue = ref(false)
+const checkboxValue = ref(false)
+const textareaValue = ref('')
+const selectedValue = ref('')
+const radioValue = ref('')
+
+const selectOptions: SelectOption[] = [
+  { value: 'option1', label: 'Option 1' },
+  { value: 'option2', label: 'Option 2' },
+  { value: 'option3', label: 'Option 3' },
+]
+
+const radioOptions: RadioOption[] = [
+  { value: 'radio1', label: 'Radio Option 1' },
+  { value: 'radio2', label: 'Radio Option 2' },
+  { value: 'radio3', label: 'Radio Option 3' },
+]
 
 const handleClick = () => {
   isModalOpen.value = true
@@ -98,6 +163,52 @@ export default {
 - Keyboard navigation (ESC to close)
 - Focus management
 - Scroll locking
+
+### Card
+- Variants: `default`, `outline`
+- Padding: `none`, `small`, `medium`, `large`
+
+### Badge
+- Variants: `default`, `primary`, `secondary`, `success`, `warning`, `error`
+- Sizes: `small`, `medium`, `large`
+
+### Switch
+- Sizes: `small`, `medium`, `large`
+- v-model support
+- Disabled state
+
+### Checkbox
+- Sizes: `small`, `medium`, `large`
+- v-model support
+- Indeterminate state
+- Disabled state
+
+### Textarea
+- Sizes: `small`, `medium`, `large`
+- Resize options: `none`, `both`, `horizontal`, `vertical`
+- v-model support
+
+### Alert
+- Variants: `default`, `info`, `success`, `warning`, `error`
+- Sizes: `small`, `medium`, `large`
+- Optional title and description
+- Closable option
+- Custom content via slots
+
+### Select
+- Sizes: `small`, `medium`, `large`
+- v-model support
+- Option groups with disabled items
+- Keyboard navigation (Arrow keys, Enter, Escape)
+- Search functionality
+- Custom option rendering
+
+### Radio
+- Sizes: `small`, `medium`, `large`
+- v-model support
+- Option groups with disabled items
+- Keyboard navigation
+- Grouped radio buttons with name attribute
 
 ## Type System
 
