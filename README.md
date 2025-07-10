@@ -121,6 +121,33 @@ npm install @upbox2-ui/vue @upbox2-ui/tailwind
     >
       <div>Content loaded successfully!</div>
     </Skeleton>
+    
+    <Tooltip 
+      content="This is a tooltip" 
+      position="top" 
+      trigger="hover"
+    >
+      <button>Hover for tooltip</button>
+    </Tooltip>
+    
+    <Drawer 
+      v-model="isDrawerOpen" 
+      position="right" 
+      size="md"
+    >
+      <template #header>
+        <h2>Drawer Title</h2>
+      </template>
+      <p>Drawer content goes here</p>
+    </Drawer>
+    
+    <Slider 
+      v-model="sliderValue" 
+      :min="0" 
+      :max="100" 
+      :step="1" 
+      show-value
+    />
   </div>
 </template>
 
@@ -141,7 +168,10 @@ import {
   Toast,
   Progress,
   Avatar,
-  Skeleton
+  Skeleton,
+  Tooltip,
+  Drawer,
+  Slider
 } from '@upbox2-ui/vue'
 import type { SelectOption, RadioOption } from '@upbox2-ui/vue'
 
@@ -153,6 +183,8 @@ const textareaValue = ref('')
 const selectedValue = ref('')
 const radioValue = ref('')
 const isLoading = ref(true)
+const isDrawerOpen = ref(false)
+const sliderValue = ref(50)
 
 const selectOptions: SelectOption[] = [
   { value: 'option1', label: 'Option 1' },
@@ -285,9 +317,94 @@ export default {
 - 로딩 상태 제어
 - 애니메이션 효과
 - 슬롯을 통한 실제 콘텐츠 표시
+
+### Dropdown
+- 트리거: `click`, `hover`, `focus`
+- 배치: 12가지 위치 옵션
+- 크기: `small`, `medium`, `large`
+- 아이콘 지원
+- 단축키 표시
+- 구분선 지원
+- 위험 아이템 스타일링
+- 키보드 네비게이션
+
+### Tabs
+- 변형: `default`, `pills`, `underline`, `card`
+- 크기: `small`, `medium`, `large`
+- 방향: `horizontal`, `vertical`
+- 아이콘 지원
+- 배지 표시
+- 닫기 가능한 탭
+- 전체 너비 옵션
+- 키보드 네비게이션
+
+### Accordion
+- 타입: `single`, `multiple`
+- 변형: `default`, `bordered`, `filled`, `ghost`
+- 크기: `small`, `medium`, `large`
+- 아이콘 지원
+- 애니메이션 효과
+- 비활성화 아이템
+- 슬롯 기반 콘텐츠
+- 키보드 네비게이션
+
+### Breadcrumb
+- 크기: `small`, `medium`, `large`
+- 구분자: 커스터마이징 가능
+- 아이콘 지원
+- 홈 링크 옵션
+- 경로 축약 (maxItems)
+- 비활성화 아이템
+- 현재 페이지 표시
+
+### Pagination
+- 변형: `default`, `outline`, `ghost`
+- 크기: `small`, `medium`, `large`
+- 페이지 크기 변경
+- 빠른 점프
+- 총 항목 수 표시
+- 간단한 모드
+- 단일 페이지 숨김
+- 완전한 키보드 접근성
 - 비활성화 아이템이 있는 옵션 그룹
 - 키보드 내비게이션
 - name 속성을 가진 그룹화된 라디오 버튼
+
+### Tooltip
+- 위치: `top`, `bottom`, `left`, `right`
+- 트리거: `hover`, `click`, `focus`
+- 크기: `small`, `medium`, `large`
+- 테마: `light`, `dark`
+- 화살표 표시 옵션
+- 지연 시간 설정
+- 커스텀 콘텐츠 슬롯
+- 비활성화 상태
+- 뷰포트 경계 감지 및 자동 위치 조정
+
+### Drawer
+- 위치: `left`, `right`, `top`, `bottom`
+- 크기: `sm`, `md`, `lg`, `xl`, `full`
+- 오버레이 제어
+- 오버레이 클릭으로 닫기
+- ESC 키로 닫기
+- 닫기 버튼 표시 옵션
+- 헤더, 콘텐츠, 푸터 슬롯
+- 포커스 트랩
+- 접근성 준수 (ARIA)
+- 스크롤 잠금
+
+### Slider
+- 방향: `horizontal`, `vertical`
+- 크기: `small`, `medium`, `large`
+- 단일 값 및 범위 슬라이더
+- 값 표시 옵션
+- 틱 마크 표시
+- 커스텀 단계 설정
+- 키보드 내비게이션 (방향키, Home, End)
+- 터치 지원
+- 값 포맷터 함수
+- 비활성화 상태
+- 완전한 접근성 지원 (ARIA)
 
 ## 타입 시스템
 
