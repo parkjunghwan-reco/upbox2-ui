@@ -2,7 +2,9 @@
 
 ## 🎯 프로젝트 목표
 
-Vue 3 + TypeScript + TailwindCSS를 활용하여 헤드리스 UI 기반의 현대적인 디자인 시스템 라이브러리를 구축하는 것이 목표였습니다.
+Vue 3 + TypeScript + TailwindCSS를 활용하여 figma MCP를 활용하여 디자인을 참조해서 헤드리스 UI 기반의 디자인 시스템 라이브러리를 구축하는 것이 목표였던 것..
+
+figma mcp로 진행이 잘 되지않아서 프롬프트에서 제거하니 모던 디자인 시스템 방식으로 진행이 됨. 
 
 ## 🚀 최초 프롬프트와 계획
 
@@ -17,7 +19,7 @@ context7 mcp를 활용하여 버전과 문법을 잘 참고해줘.
 ### 계획된 MCP 도구 활용
 1. **Context7 MCP**: 최신 Vue 3, TypeScript, TailwindCSS 문법 및 베스트 프랙티스 참조
 2. **Figma MCP**: 디자인 토큰 및 변수 시스템 구성
-3. **GitHub MCP**: 레퍼런스 프로젝트 구조 분석
+3. **GitHub 저장소 참조**: 레퍼런스 프로젝트 구조 분석 (MCP 아님)
 
 ## 📊 MCP 활용 결과
 
@@ -42,10 +44,11 @@ export const Button = defineComponent<ButtonProps>({
 })
 ```
 
-#### 2. GitHub MCP 활용
-- 레퍼런스 프로젝트 구조 분석
+#### 2. GitHub 저장소 참조 활용
+- 레퍼런스 프로젝트 구조 분석 (https://github.com/line/abc-def)
 - 모노레포 패턴 적용
 - 패키지 의존성 관리 방식 학습
+- **주의**: 별도의 GitHub MCP는 사용하지 않고 일반적인 저장소 참조
 
 ```
 packages/
@@ -246,8 +249,8 @@ const buttonClass = computed(() =>
 ### 학습 포인트
 1. **MCP 도구의 한계와 활용법**
    - Context7: 문법 및 베스트 프랙티스 참조에 효과적
-   - GitHub: 구조 분석에 유용
    - Figma: 아직 제한적, 수동 대안 필요
+   - GitHub: 별도 MCP 없이도 저장소 참조 가능
 
 2. **헤드리스 UI 라이브러리 선택의 중요성**
    - 생태계 성숙도 확인 필요
@@ -280,8 +283,8 @@ const buttonClass = computed(() =>
 
 ### MCP 도구
 - [Context7 MCP](https://github.com/context7/mcp-server)
-- [GitHub MCP](https://github.com/github/mcp-server)
 - [Figma MCP](https://github.com/figma/mcp-server)
+- GitHub 저장소 참조 (MCP 아님)
 
 ### 기술 스택
 - [Vue 3](https://vuejs.org/)
