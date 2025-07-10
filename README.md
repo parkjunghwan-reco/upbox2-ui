@@ -2,6 +2,13 @@
 
 A modern Vue 3 + TypeScript + TailwindCSS design system library built with reka-ui foundation.
 
+## 🌐 Live Demo
+
+Visit our GitHub Pages deployment:
+- **Main Page**: [https://your-username.github.io/upbox2-ui/](https://your-username.github.io/upbox2-ui/)
+- **Storybook**: [https://your-username.github.io/upbox2-ui/storybook/](https://your-username.github.io/upbox2-ui/storybook/)
+- **Example App**: [https://your-username.github.io/upbox2-ui/example/](https://your-username.github.io/upbox2-ui/example/)
+
 ## Features
 
 - **Modern Stack**: Vue 3, TypeScript, TailwindCSS
@@ -10,6 +17,7 @@ A modern Vue 3 + TypeScript + TailwindCSS design system library built with reka-
 - **Type Safe**: Full TypeScript support with proper type definitions
 - **Customizable**: CVA (Class Variance Authority) for styling variants
 - **Utility-First**: TailwindCSS utility classes and custom design tokens
+- **MCP Integration**: Built using Model Context Protocol for rapid development
 
 ## Packages
 
