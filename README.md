@@ -1,44 +1,44 @@
 # Upbox2 UI
 
-A modern Vue 3 + TypeScript + TailwindCSS design system library built with reka-ui foundation.
+reka-ui 기반으로 구축된 최신 Vue 3 + TypeScript + TailwindCSS 디자인 시스템 라이브러리입니다.
 
-## 🌐 Live Demo
+## 🌐 라이브 데모
 
-Visit our GitHub Pages deployment:
-- **Main Page**: [https://parkjunghwan-reco.github.io/upbox2-ui/](https://parkjunghwan-reco.github.io/upbox2-ui/)
-- **Storybook**: [https://parkjunghwan-reco.github.io/upbox2-ui/storybook/](https://parkjunghwan-reco.github.io/upbox2-ui/storybook/)
-- **Example App**: [https://parkjunghwan-reco.github.io/upbox2-ui/example/](https://parkjunghwan-reco.github.io/upbox2-ui/example/)
+GitHub Pages 배포 사이트를 방문하세요:
+- **메인 페이지**: [https://parkjunghwan-reco.github.io/upbox2-ui/](https://parkjunghwan-reco.github.io/upbox2-ui/)
+- **스토리북**: [https://parkjunghwan-reco.github.io/upbox2-ui/storybook/](https://parkjunghwan-reco.github.io/upbox2-ui/storybook/)
+- **예제 앱**: [https://parkjunghwan-reco.github.io/upbox2-ui/example/](https://parkjunghwan-reco.github.io/upbox2-ui/example/)
 
-## Features
+## 특징
 
-- **Modern Stack**: Vue 3, TypeScript, TailwindCSS
-- **Headless UI**: Built on reka-ui for accessibility and customization
-- **Monorepo Structure**: Core logic, Vue components, and TailwindCSS preset
-- **Type Safe**: Full TypeScript support with proper type definitions
-- **Customizable**: CVA (Class Variance Authority) for styling variants
-- **Utility-First**: TailwindCSS utility classes and custom design tokens
-- **MCP Integration**: Built using Model Context Protocol for rapid development
+- **최신 기술 스택**: Vue 3, TypeScript, TailwindCSS
+- **헤드리스 UI**: 접근성과 커스터마이징을 위한 reka-ui 기반
+- **모노레포 구조**: 핵심 로직, Vue 컴포넌트, TailwindCSS 프리셋
+- **타입 안전**: 적절한 타입 정의를 통한 완전한 TypeScript 지원
+- **커스터마이징 가능**: 스타일링 변형을 위한 CVA (Class Variance Authority)
+- **유틸리티 우선**: TailwindCSS 유틸리티 클래스 및 커스텀 디자인 토큰
+- **MCP 통합**: 빠른 개발을 위한 Model Context Protocol 사용
 
-## Packages
+## 패키지
 
 ### @upbox2-ui/core
-Headless component logic, utilities, and type definitions.
+헤드리스 컴포넌트 로직, 유틸리티, 타입 정의
 
 ### @upbox2-ui/vue
-Vue 3 components with full TypeScript support.
+완전한 TypeScript 지원을 포함한 Vue 3 컴포넌트
 
 ### @upbox2-ui/tailwind
-TailwindCSS preset with design tokens and utility classes.
+디자인 토큰과 유틸리티 클래스를 포함한 TailwindCSS 프리셋
 
-## Installation
+## 설치
 
 ```bash
 npm install @upbox2-ui/vue @upbox2-ui/tailwind
 ```
 
-## Usage
+## 사용법
 
-### Vue Components
+### Vue 컴포넌트
 
 ```vue
 <template>
@@ -138,7 +138,7 @@ const handleClick = () => {
 </script>
 ```
 
-### TailwindCSS Configuration
+### TailwindCSS 설정
 
 ```js
 // tailwind.config.js
@@ -150,77 +150,77 @@ export default {
     './src/**/*.{vue,js,ts,jsx,tsx}',
     './node_modules/@upbox2-ui/vue/dist/**/*.{js,ts,vue}'
   ],
-  // ... your config
+  // ... 기타 설정
 }
 ```
 
-## Components
+## 컴포넌트
 
 ### Button
-- Variants: `default`, `primary`, `secondary`, `outline`, `ghost`, `link`
-- Sizes: `small`, `medium`, `large`
-- Radius: `small`, `medium`, `large`
+- 변형: `default`, `primary`, `secondary`, `outline`, `ghost`, `link`
+- 크기: `small`, `medium`, `large`
+- 반경: `small`, `medium`, `large`
 
 ### Input
-- Types: `text`, `email`, `password`, `number`, `tel`, `url`, `search`
-- Sizes: `small`, `medium`, `large`
-- Error states and validation
+- 타입: `text`, `email`, `password`, `number`, `tel`, `url`, `search`
+- 크기: `small`, `medium`, `large`
+- 오류 상태 및 유효성 검사
 
 ### Modal
-- Backdrop control
-- Keyboard navigation (ESC to close)
-- Focus management
-- Scroll locking
+- 배경 제어
+- 키보드 내비게이션 (ESC로 닫기)
+- 포커스 관리
+- 스크롤 잠금
 
 ### Card
-- Variants: `default`, `outline`
-- Padding: `none`, `small`, `medium`, `large`
+- 변형: `default`, `outline`
+- 패딩: `none`, `small`, `medium`, `large`
 
 ### Badge
-- Variants: `default`, `primary`, `secondary`, `success`, `warning`, `error`
-- Sizes: `small`, `medium`, `large`
+- 변형: `default`, `primary`, `secondary`, `success`, `warning`, `error`
+- 크기: `small`, `medium`, `large`
 
 ### Switch
-- Sizes: `small`, `medium`, `large`
-- v-model support
-- Disabled state
+- 크기: `small`, `medium`, `large`
+- v-model 지원
+- 비활성화 상태
 
 ### Checkbox
-- Sizes: `small`, `medium`, `large`
-- v-model support
-- Indeterminate state
-- Disabled state
+- 크기: `small`, `medium`, `large`
+- v-model 지원
+- 불확정 상태
+- 비활성화 상태
 
 ### Textarea
-- Sizes: `small`, `medium`, `large`
-- Resize options: `none`, `both`, `horizontal`, `vertical`
-- v-model support
+- 크기: `small`, `medium`, `large`
+- 크기 조정 옵션: `none`, `both`, `horizontal`, `vertical`
+- v-model 지원
 
 ### Alert
-- Variants: `default`, `info`, `success`, `warning`, `error`
-- Sizes: `small`, `medium`, `large`
-- Optional title and description
-- Closable option
-- Custom content via slots
+- 변형: `default`, `info`, `success`, `warning`, `error`
+- 크기: `small`, `medium`, `large`
+- 선택적 제목 및 설명
+- 닫기 가능 옵션
+- 슬롯을 통한 커스텀 내용
 
 ### Select
-- Sizes: `small`, `medium`, `large`
-- v-model support
-- Option groups with disabled items
-- Keyboard navigation (Arrow keys, Enter, Escape)
-- Search functionality
-- Custom option rendering
+- 크기: `small`, `medium`, `large`
+- v-model 지원
+- 비활성화 아이템이 있는 옵션 그룹
+- 키보드 내비게이션 (방향키, Enter, Escape)
+- 검색 기능
+- 커스텀 옵션 렌더링
 
 ### Radio
-- Sizes: `small`, `medium`, `large`
-- v-model support
-- Option groups with disabled items
-- Keyboard navigation
-- Grouped radio buttons with name attribute
+- 크기: `small`, `medium`, `large`
+- v-model 지원
+- 비활성화 아이템이 있는 옵션 그룹
+- 키보드 내비게이션
+- name 속성을 가진 그룹화된 라디오 버튼
 
-## Type System
+## 타입 시스템
 
-The library includes comprehensive TypeScript definitions:
+라이브러리는 포괄적인 TypeScript 정의를 포함합니다:
 
 ```typescript
 import type { ButtonVariant, Size, Radius } from '@upbox2-ui/core'
@@ -230,32 +230,32 @@ type Size = 'small' | 'medium' | 'large'
 type Radius = 'small' | 'medium' | 'large'
 ```
 
-## Development
+## 개발
 
 ```bash
-# Install dependencies
+# 종속성 설치
 npm install
 
-# Build all packages
+# 모든 패키지 빌드
 npm run build
 
-# Development mode
+# 개발 모드
 npm run dev
 
-# Type checking
+# 타입 검사
 npm run type-check
 ```
 
-## Design System
+## 디자인 시스템
 
-The library follows modern design system principles:
+라이브러리는 현대적인 디자인 시스템 원칙을 따릅니다:
 
-- **Consistent spacing** using 8px grid system
-- **Semantic color system** with CSS custom properties
-- **Responsive typography** scale
-- **Accessibility-first** approach
-- **Component composition** patterns
+- **일관된 간격**: 8px 그리드 시스템 사용
+- **시맨틱 색상 시스템**: CSS 커스텀 속성 포함
+- **반응형 타이포그래피** 스케일
+- **접근성 우선** 접근
+- **컴포넌트 구성** 패턴
 
-## License
+## 라이선스
 
 MIT
