@@ -5,9 +5,9 @@ A modern Vue 3 + TypeScript + TailwindCSS design system library built with reka-
 ## 🌐 Live Demo
 
 Visit our GitHub Pages deployment:
-- **Main Page**: [https://your-username.github.io/upbox2-ui/](https://your-username.github.io/upbox2-ui/)
-- **Storybook**: [https://your-username.github.io/upbox2-ui/storybook/](https://your-username.github.io/upbox2-ui/storybook/)
-- **Example App**: [https://your-username.github.io/upbox2-ui/example/](https://your-username.github.io/upbox2-ui/example/)
+- **Main Page**: [https://parkjunghwan-reco.github.io/upbox2-ui/](https://parkjunghwan-reco.github.io/upbox2-ui/)
+- **Storybook**: [https://parkjunghwan-reco.github.io/upbox2-ui/storybook/](https://parkjunghwan-reco.github.io/upbox2-ui/storybook/)
+- **Example App**: [https://parkjunghwan-reco.github.io/upbox2-ui/example/](https://parkjunghwan-reco.github.io/upbox2-ui/example/)
 
 ## Features
 
