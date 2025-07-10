@@ -10,9 +10,13 @@ export { default as Textarea } from './components/Textarea.vue'
 export { default as Alert } from './components/Alert.vue'
 export { default as Select } from './components/Select.vue'
 export { default as Radio } from './components/Radio.vue'
+export { default as Toast } from './components/Toast.vue'
+export { default as Progress } from './components/Progress.vue'
+export { default as Avatar } from './components/Avatar.vue'
+export { default as Skeleton } from './components/Skeleton.vue'
 
 // Re-export core types
-export type { ButtonVariant, Size, Radius, Color, SelectOption, RadioOption } from '@upbox2-ui/core'
+export type { ButtonVariant, Size, Radius, Color, SelectOption, RadioOption, ToastVariant, ToastPosition } from '@upbox2-ui/core'
 
 // Export composables
 export * from './composables'

@@ -92,6 +92,35 @@ npm install @upbox2-ui/vue @upbox2-ui/tailwind
       :options="radioOptions" 
       name="radio-group"
     />
+    
+    <!-- New Components -->
+    <Toast 
+      variant="success" 
+      title="Success!" 
+      description="Your action was completed successfully."
+      :duration="4000"
+    />
+    
+    <Progress 
+      :value="75" 
+      variant="success" 
+      label="Loading..."
+      show-value
+    />
+    
+    <Avatar 
+      src="https://example.com/avatar.jpg" 
+      alt="John Doe"
+      size="medium"
+    />
+    
+    <Skeleton 
+      :loading="isLoading"
+      variant="text"
+      :lines="3"
+    >
+      <div>Content loaded successfully!</div>
+    </Skeleton>
   </div>
 </template>
 
@@ -108,7 +137,11 @@ import {
   Textarea, 
   Alert,
   Select,
-  Radio
+  Radio,
+  Toast,
+  Progress,
+  Avatar,
+  Skeleton
 } from '@upbox2-ui/vue'
 import type { SelectOption, RadioOption } from '@upbox2-ui/vue'
 
@@ -119,6 +152,7 @@ const checkboxValue = ref(false)
 const textareaValue = ref('')
 const selectedValue = ref('')
 const radioValue = ref('')
+const isLoading = ref(true)
 
 const selectOptions: SelectOption[] = [
   { value: 'option1', label: 'Option 1' },
@@ -214,6 +248,43 @@ export default {
 ### Radio
 - 크기: `small`, `medium`, `large`
 - v-model 지원
+- 비활성화 옵션
+- 키보드 내비게이션
+
+### Toast
+- 변형: `default`, `success`, `warning`, `error`, `info`
+- 크기: `small`, `medium`, `large`
+- 위치: `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `bottom-right`
+- 자동 닫기 (커스텀 지속 시간)
+- 수동 닫기 가능
+- 액션 버튼 지원
+- 아이콘 지원
+
+### Progress
+- 변형: `default`, `success`, `warning`, `error`, `info`
+- 크기: `small`, `medium`, `large`
+- 진행률 값 표시
+- 불확정 상태 (로딩 애니메이션)
+- 줄무늬 및 애니메이션 효과
+- 레이블 지원
+
+### Avatar
+- 변형: `circle`, `square`, `rounded`
+- 크기: `small`, `medium`, `large`
+- 이미지 URL 지원
+- 이니셜 표시 (자동 생성)
+- 폴백 콘텐츠
+- 커스텀 색상 지원
+- 이미지 로드 에러 처리
+
+### Skeleton
+- 변형: `text`, `rectangle`, `circle`, `avatar`, `button`
+- 크기: `small`, `medium`, `large`
+- 여러 줄 지원
+- 커스텀 크기 (width, height)
+- 로딩 상태 제어
+- 애니메이션 효과
+- 슬롯을 통한 실제 콘텐츠 표시
 - 비활성화 아이템이 있는 옵션 그룹
 - 키보드 내비게이션
 - name 속성을 가진 그룹화된 라디오 버튼
