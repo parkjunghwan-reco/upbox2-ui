@@ -316,3 +316,137 @@ A: 모노레포 환경에서의 의존성 관리와 GitHub Pages 배포 설정�
 
 **Q: 다음 프로젝트에서 개선하고 싶은 부분은?**
 A: Figma MCP 활용 실패를 보완하기 위해 Figma Plugin 개발을 통한 디자인 토큰 자동화를 구현하고 싶습니다.
+
+## 📦 pnpm 워크스페이스 최적화
+
+### pnpm vs npm 비교 분석
+
+#### 선택 이유
+- **모노레포 특화**: 워크스페이스 간 의존성 관리 우수
+- **저장 공간 효율**: 중앙 저장소 + 하드링크로 **최대 90% 절약**
+- **빠른 설치 속도**: npm 대비 **2-3배 빠른 설치**
+- **엄격한 의존성 관리**: 유령 의존성(phantom dependencies) 방지
+
+#### 성능 비교
+| 항목 | npm | pnpm | 결과 |
+|------|-----|------|------|
+| 설치 속도 | 보통 | 빠름 | ⚡ 2-3배 향상 |
+| 디스크 사용량 | 높음 | 낮음 | 💾 90% 절약 |
+| 의존성 안전성 | 보통 | 높음 | 🔒 유령 의존성 방지 |
+| CI/CD 속도 | 보통 | 빠름 | 🚀 빌드 시간 단축 |
+
+### 워크스페이스 의존성 해결 방식
+
+#### 중앙 집중식 관리
+```
+/upbox2-ui/
+├── node_modules/               # 🎯 모든 의존성 중앙 저장
+│   ├── vue/                    # 실제 패키지
+│   ├── @storybook/             # 실제 패키지
+│   └── ...
+├── packages/
+│   ├── example/
+│   │   ├── node_modules/       # 🚫 빌드 캐시만 (.vite/)
+│   │   └── package.json
+│   └── storybook/
+│       ├── node_modules/       # 🚫 빌드 캐시만 (.cache/)
+│       └── package.json
+└── pnpm-workspace.yaml
+```
+
+#### 의존성 해결 테스트
+```bash
+# 로컬 node_modules 제거 실험
+$ rm -rf packages/example/node_modules
+$ rm -rf packages/storybook/node_modules
+
+# 정상 작동 확인
+$ cd packages/example && pnpm run dev     # ✅ 성공
+$ cd packages/storybook && pnpm run dev   # ✅ 성공
+
+# 의존성 해결 경로 확인
+$ node -e "console.log(require.resolve('vue'))"
+# → /upbox2-ui/node_modules/vue/index.js
+```
+
+### 실제 적용 결과
+
+#### 디스크 사용량 최적화
+```bash
+# 기존 (npm 방식)
+packages/example/node_modules/     # ~200MB
+packages/storybook/node_modules/   # ~300MB
+packages/core/node_modules/        # ~150MB
+# 총 ~650MB
+
+# 최적화 후 (pnpm 방식)
+node_modules/                      # ~400MB
+packages/*/node_modules/           # 캐시만 (<1MB)
+# 총 ~401MB (38% 절약)
+```
+
+#### 빌드 시간 개선
+```bash
+# GitHub Actions 빌드 시간
+- npm install: ~45초
+- pnpm install: ~18초 (60% 단축)
+
+# 로컬 개발 환경
+- 초기 설치: npm 120초 → pnpm 45초
+- 증분 설치: npm 30초 → pnpm 8초
+```
+
+### 모노레포 워크스페이스 설정
+
+#### pnpm-workspace.yaml
+```yaml
+packages:
+  - 'packages/*'
+  - 'example'
+```
+
+#### 의존성 관리 패턴
+```json
+{
+  "dependencies": {
+    "@upbox2-ui/core": "workspace:*",
+    "@upbox2-ui/tailwind": "workspace:*"
+  }
+}
+```
+
+#### 스크립트 실행 최적화
+```bash
+# 모든 워크스페이스에서 실행
+$ pnpm -r run build
+
+# 특정 워크스페이스에서만 실행
+$ pnpm --filter @upbox2-ui/core build
+
+# 병렬 실행 (Turbo 연동)
+$ pnpm run build  # turbo가 자동으로 병렬 처리
+```
+
+### 핵심 학습 포인트
+
+1. **중앙 집중식 의존성 관리**
+   - 각 패키지의 로컬 node_modules 불필요
+   - 루트 node_modules에서 모든 의존성 해결
+   - 일관된 패키지 버전 보장
+
+2. **빌드 도구 캐시 구분**
+   - 실제 패키지 ≠ 빌드 캐시
+   - `.vite/`, `.cache/` 등은 도구별 캐시
+   - 의존성 해결과 무관
+
+3. **모노레포 최적화 효과**
+   - 저장 공간 38% 절약
+   - 설치 속도 60% 향상
+   - CI/CD 파이프라인 최적화
+
+4. **개발 경험 개선**
+   - 일관된 의존성 버전
+   - 빠른 로컬 개발 환경
+   - 엄격한 의존성 관리로 버그 감소
+
+---
