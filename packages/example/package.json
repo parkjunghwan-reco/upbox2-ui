@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@upbox2-ui/vue": "file:../vue",
+    "@upbox2-ui/tailwind": "file:../tailwind",
     "vue": "^3.3.4"
   },
   "devDependencies": {

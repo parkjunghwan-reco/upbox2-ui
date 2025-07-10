@@ -4,6 +4,9 @@
   "version": "0.1.0",
   "description": "Upbox2 UI Design System - Vue 3 components built on reka-ui",
   "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
 
   "scripts": {
     "build": "turbo run build",

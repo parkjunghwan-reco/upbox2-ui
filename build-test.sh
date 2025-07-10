@@ -3,55 +3,40 @@
 # 로컬 배포 테스트 스크립트
 echo "🚀 Starting local build test..."
 
-# 각 패키지의 의존성 설치
-echo "📦 Installing dependencies..."
+# 루트 의존성 설치
+echo "📦 Installing root dependencies..."
 npm install
 
-echo "📦 Installing core dependencies..."
-cd packages/core && npm install
-cd ../..
+# 패키지별 의존성 설치 및 빌드 (순서대로)
+echo "� Building packages in order..."
 
-echo "📦 Installing tailwind dependencies..."
-cd packages/tailwind && npm install
-cd ../..
-
-echo "📦 Installing vue dependencies..."
-cd packages/vue && npm install
-cd ../..
-
-echo "📦 Installing storybook dependencies..."
-cd packages/storybook && npm install
-cd ../..
-
-echo "📦 Installing example dependencies..."
-cd packages/example && npm install
-cd ../..
-
-# 빌드 실행
-echo "🔨 Building packages..."
-
-echo "Building core..."
+echo "📦 Building core package..."
 cd packages/core
+npm install
 npm run build || { echo "❌ Core build failed"; exit 1; }
 cd ../..
 
-echo "Building tailwind..."
+echo "📦 Building tailwind package..."
 cd packages/tailwind
+npm install
 npm run build || { echo "❌ Tailwind build failed"; exit 1; }
 cd ../..
 
-echo "Building vue..."
+echo "📦 Building vue package..."
 cd packages/vue
+npm install
 npm run build || { echo "❌ Vue build failed"; exit 1; }
 cd ../..
 
-echo "Building storybook..."
+echo "📦 Building storybook..."
 cd packages/storybook
+npm install
 npm run build-storybook || { echo "❌ Storybook build failed"; exit 1; }
 cd ../..
 
-echo "Building example..."
+echo "📦 Building example..."
 cd packages/example
+npm install
 npm run build || { echo "❌ Example build failed"; exit 1; }
 cd ../..
 

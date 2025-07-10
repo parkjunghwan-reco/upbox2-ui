@@ -28,7 +28,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@upbox2-ui/core": "0.1.0",
+    "@upbox2-ui/core": "file:../core",
     "reka-ui": "^2.3.2"
   },
   "devDependencies": {

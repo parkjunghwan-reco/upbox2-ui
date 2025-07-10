@@ -50,19 +50,22 @@ npm error The `npm ci` command can only install with an existing package-lock.js
 
 **해결방법**:
 - GitHub Actions에서 `npm ci` 대신 `npm install` 사용
-- 또는 로컬에서 각 패키지별로 package-lock.json 생성:
+
+#### 2. **로컬 패키지 의존성 문제**
 ```bash
-# 각 패키지 디렉토리에서 실행
-cd packages/core && npm install
-cd ../vue && npm install
-cd ../tailwind && npm install
-cd ../storybook && npm install
-cd ../example && npm install
+# 에러: 로컬 패키지를 NPM 레지스트리에서 찾을 수 없음
+npm error 404 Not Found - GET https://registry.npmjs.org/@upbox2-ui%2fcore
+npm error 404  '@upbox2-ui/core@0.1.0' is not in this registry.
 ```
 
-#### 2. **의존성 문제**
-- 모든 패키지가 올바르게 빌드되는지 확인
-- 패키지 간 의존 관계 순서 확인 (core → tailwind → vue → storybook/example)
+**해결방법**:
+- package.json에서 로컬 패키지 참조를 `file:` 프로토콜로 변경
+- 예: `"@upbox2-ui/core": "file:../core"`
+- 워크스페이스 설정으로 패키지 간 의존성 해결
+
+#### 3. **빌드 순서 문제**
+- 의존성이 있는 패키지는 올바른 순서로 빌드: core → tailwind → vue → storybook/example
+- 각 패키지별로 `npm install` 및 `npm run build` 순차 실행
 
 #### 3. **경로 문제**
 - 상대 경로 및 base URL 설정 확인

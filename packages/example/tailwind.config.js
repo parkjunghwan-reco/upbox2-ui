@@ -1,4 +1,4 @@
-import preset from '@upbox2-ui/tailwind/preset'
+import { preset } from '@upbox2-ui/tailwind'
 
 /** @type {import('tailwindcss').Config} */
 export default {

@@ -22,8 +22,8 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@upbox2-ui/tailwind": "0.1.0",
-    "@upbox2-ui/vue": "0.1.0",
+    "@upbox2-ui/tailwind": "file:../tailwind",
+    "@upbox2-ui/vue": "file:../vue",
     "vue": "^3.3.0"
   },
   "devDependencies": {
