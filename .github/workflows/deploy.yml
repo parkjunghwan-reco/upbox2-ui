@@ -33,42 +33,49 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'npm'
+          # Remove cache since we don't have package-lock.json files
 
       - name: Install dependencies
         run: |
-          npm ci
+          npm install
           # Install dependencies for each package
-          cd packages/core && npm ci
-          cd ../vue && npm ci
-          cd ../tailwind && npm ci
-          cd ../storybook && npm ci
-          cd ../example && npm ci
+          cd packages/core && npm install
+          cd ../vue && npm install
+          cd ../tailwind && npm install
+          cd ../storybook && npm install
+          cd ../example && npm install
 
-      - name: Build core package
+      - name: Build packages
         run: |
+          # Build core package
+          echo "Building core package..."
           cd packages/core
-          npm run build
-
-      - name: Build tailwind package
-        run: |
+          npm run build || { echo "Core build failed"; exit 1; }
+          cd ../..
+          
+          # Build tailwind package
+          echo "Building tailwind package..."
           cd packages/tailwind
-          npm run build
-
-      - name: Build vue package
-        run: |
+          npm run build || { echo "Tailwind build failed"; exit 1; }
+          cd ../..
+          
+          # Build vue package
+          echo "Building vue package..."
           cd packages/vue
-          npm run build
-
-      - name: Build Storybook
-        run: |
+          npm run build || { echo "Vue build failed"; exit 1; }
+          cd ../..
+          
+          # Build Storybook
+          echo "Building Storybook..."
           cd packages/storybook
-          npm run build-storybook
-
-      - name: Build Example app
-        run: |
+          npm run build-storybook || { echo "Storybook build failed"; exit 1; }
+          cd ../..
+          
+          # Build Example app
+          echo "Building Example app..."
           cd packages/example
-          NODE_ENV=production npm run build
+          npm run build || { echo "Example app build failed"; exit 1; }
+          cd ../..
 
       - name: Create deployment structure
         run: |
