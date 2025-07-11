@@ -6,7 +6,7 @@ reka-ui 기반으로 구축된 최신 Vue 3 + TypeScript + TailwindCSS 디자인
 
 GitHub Pages 배포 사이트를 방문하세요:
 - **메인 페이지**: [https://parkjunghwan-reco.github.io/upbox2-ui/](https://parkjunghwan-reco.github.io/upbox2-ui/)
-- **스토리북**: [https://parkjunghwan-reco.github.io/upbox2-ui/storybook/](https://parkjunghwan-reco.github.io/upbox2-ui/storybook/)
+- **스토리북**: [https://parkjunghwan-reco.github.io/upbox2-ui/storybook/](https://parkjunghwan-reco.github.io/upbox2-ui/storybook/?path=/story/introduction--welcome)
 - **예제 앱**: [https://parkjunghwan-reco.github.io/upbox2-ui/example/](https://parkjunghwan-reco.github.io/upbox2-ui/example/)
 
 ## 특징

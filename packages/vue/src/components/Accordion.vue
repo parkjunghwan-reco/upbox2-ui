@@ -12,7 +12,7 @@
       <!-- Header -->
       <button
         type="button"
-        class="w-full flex items-center justify-between font-medium text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-150"
+        class="w-full flex items-center justify-between font-medium text-left text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-150"
         :class="[
           variantHeaderClass,
           sizeHeaderClass,
@@ -37,7 +37,7 @@
           />
           
           <!-- Title -->
-          <span>{{ item.title }}</span>
+          <span class="text-gray-900">{{ item.title }}</span>
         </div>
         
         <!-- Arrow -->
@@ -57,7 +57,7 @@
         v-if="isItemOpen(item.id)"
         :id="`accordion-content-${item.id}`"
         :aria-labelledby="`accordion-header-${item.id}`"
-        class="accordion-content"
+        class="accordion-content text-gray-900"
         :class="[
           variantContentClass,
           sizeContentClass,
@@ -72,7 +72,7 @@
           :item="item"
           :open="isItemOpen(item.id)"
         >
-          <div v-if="item.content" v-html="item.content" />
+          <div v-if="item.content" class="text-gray-900 leading-relaxed" v-html="item.content" />
           <div v-else class="text-gray-500">
             Content for {{ item.title }}
           </div>
@@ -165,41 +165,41 @@ const accordionVariants = {
   default: {
     container: 'border border-gray-200 rounded-lg divide-y divide-gray-200',
     item: 'bg-white',
-    header: 'px-4 py-3 hover:bg-gray-50',
-    content: 'px-4 py-3 bg-gray-50',
+    header: 'px-4 py-3 hover:bg-gray-50 text-gray-900',
+    content: 'px-4 py-3 bg-gray-50 text-gray-900',
   },
   bordered: {
     container: 'border border-gray-300 rounded-lg',
     item: 'bg-white border-b border-gray-200 last:border-b-0',
-    header: 'px-4 py-3 hover:bg-gray-50',
-    content: 'px-4 py-3 border-t border-gray-200',
+    header: 'px-4 py-3 hover:bg-gray-50 text-gray-900',
+    content: 'px-4 py-3 border-t border-gray-200 text-gray-900',
   },
   filled: {
     container: 'bg-gray-100 rounded-lg',
     item: 'bg-white mb-2 last:mb-0 rounded-lg shadow-sm',
-    header: 'px-4 py-3 hover:bg-gray-50 rounded-lg',
-    content: 'px-4 py-3 bg-gray-50 rounded-b-lg',
+    header: 'px-4 py-3 hover:bg-gray-50 rounded-lg text-gray-900',
+    content: 'px-4 py-3 bg-gray-50 rounded-b-lg text-gray-900',
   },
   ghost: {
     container: '',
     item: 'mb-2 last:mb-0',
-    header: 'px-4 py-3 hover:bg-gray-50 rounded-lg',
-    content: 'px-4 py-3',
+    header: 'px-4 py-3 hover:bg-gray-50 rounded-lg text-gray-900',
+    content: 'px-4 py-3 text-gray-900',
   },
 } as const
 
 const accordionSizes = {
   small: {
-    header: 'px-3 py-2 text-sm',
-    content: 'px-3 py-2 text-sm',
+    header: 'px-3 py-2 text-sm text-gray-900',
+    content: 'px-3 py-2 text-sm text-gray-900',
   },
   medium: {
-    header: 'px-4 py-3 text-base',
-    content: 'px-4 py-3 text-base',
+    header: 'px-4 py-3 text-base text-gray-900',
+    content: 'px-4 py-3 text-base text-gray-900',
   },
   large: {
-    header: 'px-6 py-4 text-lg',
-    content: 'px-6 py-4 text-base',
+    header: 'px-6 py-4 text-lg text-gray-900',
+    content: 'px-6 py-4 text-base text-gray-900',
   },
 } as const
 
