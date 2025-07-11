@@ -2,18 +2,17 @@
 
 ## 🎯 프로젝트 목표
 
-Vue 3 + TypeScript + TailwindCSS를 활용하여 figma MCP를 활용하여 디자인을 참조해서 헤드리스 UI 기반의 디자인 시스템 라이브러리를 구축하는 것이 목표였던 것..
+Vue 3 + TypeScript + TailwindCSS를 활용하여 figma MCP를 활용하여 디자인을 참조해서 헤드리스 UI 기반의 디자인 시스템 라이브러리를 구축하는 것이 목표였지만,
+figma mcp로 진행이 잘 되지않아서 프롬프트에서 제거 > figma 제외하고 완성이라도 해보자해서 일반적인 디자인 시스템 방식으로 진행이 됨. 
 
-figma mcp로 진행이 잘 되지않아서 프롬프트에서 제거하니 모던 디자인 시스템 방식으로 진행이 됨. 
-
-## 🚀 최초 프롬프트와 계획
+## 🚀 프롬프트와 계획
 
 ### 초기 요구사항
 ```
 "vue3+typescript+tailwindcss를 활용하고 headless UI인 reka-ui를 기반으로 디자인 시스템 라이브러리를 제작하려고 해. 
 context7 mcp를 활용하여 버전과 문법을 잘 참고해줘. 
 프로젝트 구조 레퍼런스는 https://github.com/line/abc-def 여기 git 주소를 참고해줘. 
-해당 저소는 react와 headless UI의 react 버전인 radix-ui 기반으로 제작되었어."
+해당 저장소는 react와 headless UI의 react 버전인 radix-ui 기반으로 제작되었어."
 ```
 
 ### 계획된 MCP 도구 활용
@@ -310,9 +309,6 @@ A: Context7 MCP가 가장 유용했고, Sequential-thinking MCP가 복잡한 문
 
 **Q: reka-ui를 실제로 사용하지 못한 이유는?**
 A: Vue 3 생태계에서의 성숙도 부족과 문서화 부족이 주요 원인이었습니다. 대신 헤드리스 UI 패턴은 유지하면서 직접 구현하는 방향으로 선회했습니다.
-
-**Q: 가장 큰 도전 과제는?**
-A: 모노레포 환경에서의 의존성 관리와 GitHub Pages 배포 설정이었습니다. 특히 로컬 패키지 의존성과 빌드 순서 관리가 복잡했습니다.
 
 **Q: 다음 프로젝트에서 개선하고 싶은 부분은?**
 A: Figma MCP 활용 실패를 보완하기 위해 Figma Plugin 개발을 통한 디자인 토큰 자동화를 구현하고 싶습니다.
